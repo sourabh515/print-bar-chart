@@ -1,0 +1,27 @@
+public class PrintBarChart {
+    public static void main(String[] args) {
+        int arr[] = {1,0,2,5,3,7};
+        // In bar chart Y (Height) and X Axis (Width)
+        // So we need to take Height Present from 1 to 7 in Y and in X we need arr values (to represent the bars)
+        // first get the max height for the bar
+        int max = arr [0];
+        for(int element : arr){
+            if(element>max){
+                max = element;
+            }
+        }
+        // For Y - Axis 
+        for(int i  = max ; i>=1 ; i--){
+            // now for the x-axis array elements (Printing a One Row)
+            for(int j = 0 ; j<arr.length; j++){
+                if(i <= arr[j]){
+                    System.out.print("*\t");
+                }
+                else{
+                    System.out.print("\t");
+                }
+            }
+            System.out.println(); // Moving to the next
+        }
+    }
+}
